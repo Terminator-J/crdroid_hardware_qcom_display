@@ -512,12 +512,6 @@ void HWCDisplay::BuildLayerStack() {
     working_primaries = WidestPrimaries(working_primaries,
                                         layer->input_buffer.color_metadata.colorPrimaries);
 
-#ifdef FOD_ZPOS
-    if (hwc_layer->IsFodPressed()) {
-      layer->flags.fod_pressed = true;
-    }
-#endif
-
     // set default composition as GPU for SDM
     layer->composition = kCompositionGPU;
 
